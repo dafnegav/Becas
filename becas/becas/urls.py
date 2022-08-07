@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from becas.datosbecas.views import RetrieveEstudio
 
 from datosbecas.views import RetrieveBecario
 
@@ -22,4 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('becarios/', RetrieveBecario.as_view()),
+    path('estudios/', RetrieveEstudio.as_view()),
+    
 ]
