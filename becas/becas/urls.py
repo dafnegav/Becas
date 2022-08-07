@@ -19,6 +19,7 @@ from django.urls import path
 from datosbecas.views import (
     RetrieveBecario, 
     RetrieveEstudio,
+    RetrieveBeca,
 )
 
 
@@ -27,5 +28,6 @@ urlpatterns = [
 
     path('becarios/', RetrieveBecario.as_view()),
     path('estudios/', RetrieveEstudio.as_view()),
+    path('beca/', RetrieveBeca.as_view()),
 
 ]
