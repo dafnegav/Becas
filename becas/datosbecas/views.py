@@ -9,6 +9,8 @@ from rest_framework.permissions import AllowAny
 
 from datosbecas.models import Becario, Estudio, Beca
 
+from datosbecas.serializers import BecarioSerializer, EstudioSerializer, BecaSerializer
+
 #Create your views here.
 class RetrieveBecario(APIView):
     permission_classes = (AllowAny,)
