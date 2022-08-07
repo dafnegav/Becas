@@ -16,3 +16,12 @@ class RetrieveBecario(APIView):
     def get(self, request):
         becarios_list = Becario.objects.all().values()
         return Response(becarios_list, status=status.HTTP_200_OK)
+
+class RetrieveEstudio(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request):
+        estudios_list = Estudio.objects.all().values()
+        return Response(estudios_list)
+
+        
