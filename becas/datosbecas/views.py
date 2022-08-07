@@ -22,6 +22,5 @@ class RetrieveEstudio(APIView):
 
     def get(self, request):
         estudios_list = Estudio.objects.all().values()
-        return Response(estudios_list)
+        return Response(estudios_list, status=status.HTTP_200_OK)
 
-        
