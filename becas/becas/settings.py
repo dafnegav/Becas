@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #nuevas
     'datosbecas',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
