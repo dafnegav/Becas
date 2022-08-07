@@ -1,3 +1,5 @@
+from pyexpat import model
+from unittest.util import _MAX_LENGTH
 from django.db import models
 
 # Create your models here.
@@ -18,6 +20,19 @@ class Estudio(models.Model):
 
     class Meta:
         db_table ='estudios'
+
+class Beca(models.Model):
+    Becario = models.ForeignKey(Becario, on_delete=models.CASCADE, null=True, verbose_name='Becario')
+    First_date = models.DateField(verbose_name='Fecha de inicio')
+    End_date = models.DateField(verbose_name='Fecha final')
+    Status = models.CharField(max_length=128, verbose_name='Estado de la beca')
+    Create_date = models.DateTimeField(auto_now_add=True,verbose_name='Fecha creación')
+
+    class Meta:
+        db_table = 'becas'
+
+
+
     
 
 
