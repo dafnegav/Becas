@@ -20,6 +20,7 @@ from datosbecas.views import (
     RetrieveBecario, 
     RetrieveEstudio,
     RetrieveBeca,
+    CreateBecario
 )
 
 
@@ -29,5 +30,6 @@ urlpatterns = [
     path('becarios/', RetrieveBecario.as_view()),
     path('estudios/', RetrieveEstudio.as_view()),
     path('beca/', RetrieveBeca.as_view()),
+    path('becarios/create/', CreateBecario.as_view()),
 
 ]

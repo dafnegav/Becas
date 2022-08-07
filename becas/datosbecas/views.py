@@ -17,6 +17,14 @@ class RetrieveBecario(APIView):
         becarios_list = Becario.objects.all().values()
         return Response(becarios_list, status=status.HTTP_200_OK)
 
+class CreateBecario(APIView):
+    def post(self, request):
+        data = request.data
+        serializer = BecarioSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 class RetrieveEstudio(APIView):
     permission_classes = (AllowAny,)
 
