@@ -17,7 +17,8 @@ class RetrieveBecario(APIView):
 
     def get(self, request):
         becarios_list = Becario.objects.all().values()
-        return Response(becarios_list, status=status.HTTP_200_OK)
+        serializer = BecarioSerializer(becarios_list, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class CreateBecario(APIView):
     def post(self, request):
@@ -32,12 +33,30 @@ class RetrieveEstudio(APIView):
 
     def get(self, request):
         estudios_list = Estudio.objects.all().values()
-        return Response(estudios_list, status=status.HTTP_200_OK)
+        serializer = EstudioSerializer(estudios_list, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class CreateEstudio(APIView):
+    def post(self, request):
+        data = request.data
+        serializer = EstudioSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class RetrieveBeca(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
         beca_list = Beca.objects.all().values()
-        return Response(beca_list, status=status.HTTP_200_OK)
+        serializer = BecaSerializer(beca_list, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class CreateBeca(APIView):
+    def post(self, request):
+        data = request.data
+        serializer = BecaSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
