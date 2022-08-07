@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from datosbecas.views import RetrieveBecario
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('becarios/', RetrieveBecario.as_view()),
 ]
