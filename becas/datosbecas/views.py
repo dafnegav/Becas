@@ -24,3 +24,10 @@ class RetrieveEstudio(APIView):
         estudios_list = Estudio.objects.all().values()
         return Response(estudios_list, status=status.HTTP_200_OK)
 
+class RetrieveBeca(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request):
+        beca_list = Beca.objects.all().values()
+        return Response(beca_list, status=status.HTTP_200_OK)
+
