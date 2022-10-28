@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'becas',
         'USER': 'postgres', 
-        'PASSWORD': 'Ave29*fenix', #Esta es la clave para entrar a pgadmin
+        'PASSWORD': '******', #Esta es la clave para entrar a pgadmin
         'HOST': 'localhost',
         'PORT': '5432'
     }
